@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import ProfilePicture from "../../public/Javier Garcia Profile Picture.jpg";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
@@ -118,7 +117,7 @@ export default function Home() {
                 className="rounded-full"
                 height="200"
                 width="200"
-                src={ProfilePicture}
+                src="/Javier Garcia Profile Picture.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
