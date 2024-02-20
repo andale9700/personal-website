@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import ProfilePicture from "../../public/Javier_Garcia_Profile_Picture.jpg";
 
 const VENTURES = [
   {
@@ -118,7 +117,7 @@ export default function Home() {
                 className="rounded-full"
                 height="200"
                 width="200"
-                src={ProfilePicture}
+                src="/Javier_Garcia_Profile_Picture.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
