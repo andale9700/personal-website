@@ -142,7 +142,7 @@ export default function Home() {
             </h2>
             <p>
               Hi, I&apos;m Javier, but please call me Andrew! I&apos;m passionate about building
-              things that make people's lives better.
+              things that make people&apos;s lives better.
             </p>
             <p>
               Most recently, I&apos;ve focused on making education as fun and accessible for others
