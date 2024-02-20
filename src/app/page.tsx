@@ -117,7 +117,7 @@ export default function Home() {
                 className="rounded-full"
                 height="200"
                 width="200"
-                src="/Javier Garcia Profile Picture.jpg"
+                src="/Javier_Garcia_Profile_Picture.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
