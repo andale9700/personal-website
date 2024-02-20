@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import ProfilePicture from "../../public/Javier_Garcia_Profile_Picture.jpg";
 
 const VENTURES = [
   {
@@ -117,7 +118,7 @@ export default function Home() {
                 className="rounded-full"
                 height="200"
                 width="200"
-                src="/Javier_Garcia_Profile_Picture.jpg"
+                src={ProfilePicture}
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
@@ -139,10 +140,8 @@ export default function Home() {
             <p>
               Most recently, I&apos;ve focused on making education as fun and accessible for others
               as it was for me– especially to students from underserved communities. Founding{" "}
-              <Button asChild variant="link" className="h-min p-0 text-base">
-                <Link href="#education-academy" className="text-blue-600">
-                  Education Academy
-                </Link>
+              <Button asChild variant="link" className="h-min p-0 text-base text-blue-600">
+                <Link href="#education-academy">Education Academy</Link>
               </Button>
               , I&apos;ve pioneered hundreds of solutions that democratize learning for thousands
               across Texas including parterning with the largest math and science organizations in
@@ -247,21 +246,11 @@ export default function Home() {
               <p>
                 TMSCA Top Dog Award: Best overall math and science student in Texas (
                 <Button asChild variant="link" className="w-min px-0 text-base text-blue-600">
-                  <Link
-                    href="https://www.tmsca.org/images/2015_hs_state/6a_top_gun.pdf"
-                    className=""
-                  >
-                    2015
-                  </Link>
+                  <Link href="https://www.tmsca.org/images/2015_hs_state/6a_top_gun.pdf">2015</Link>
                 </Button>{" "}
                 &amp;{" "}
                 <Button asChild variant="link" className="w-mi px-0 text-base text-blue-600">
-                  <Link
-                    href="https://www.tmsca.org/images/2016_hs_state/6a_top_gun.pdf"
-                    className=""
-                  >
-                    2016
-                  </Link>
+                  <Link href="https://www.tmsca.org/images/2016_hs_state/6a_top_gun.pdf">2016</Link>
                 </Button>
                 )
               </p>
