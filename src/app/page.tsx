@@ -1,15 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProfilePicture from "../../public/Javier Garcia Profile Picture.jpg";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const VENTURES = [
   {
@@ -174,7 +167,7 @@ export default function Home() {
 
             <ul className="space-y-8">
               {VENTURES.map((venture) => (
-                <li key={venture.name} className="flex flex-col space-y-2">
+                <li id={venture.id} key={venture.name} className="flex flex-col space-y-2">
                   <div>
                     <h3 className="text-base font-bold tracking-tighter md:text-xl lg:text-2xl">
                       {venture.name}
@@ -198,7 +191,7 @@ export default function Home() {
         </section>
 
         <section className="container">
-          <div className="flex flex-col space-y-4 max-w-5xl">
+          <div className="flex flex-col space-y-6 max-w-5xl">
             <h2 id="misc" className="text-xl font-bold tracking-tighter md:text-3xl lg:text-4xl">
               Misc
             </h2>
@@ -211,7 +204,7 @@ export default function Home() {
                 Experience
               </h3>
 
-              <ul className="list-disc list-inside">
+              <ul className="list-disc list-outside">
                 <li>
                   COGNISENSE AI, Lead Product Designer (2020) - led a team to the development of a
                   wireless infrared camera system
@@ -237,7 +230,7 @@ export default function Home() {
                 B.S. in Mechanical Engineering (Dynamic Systems &amp; Controls) from Stanford
                 University (2016-2020): 3.73/4.00 GPA
               </p>
-              <ul className="list-disc list-inside">
+              <ul className="list-disc list-outside">
                 <li>Freshman RA - Rinconada</li>
                 <li>Phi Kappa Psi - Historian</li>
                 <li>Stanford UAV Club - Public Outreach Officer</li>
@@ -273,12 +266,12 @@ export default function Home() {
                 </Button>
                 )
               </p>
-              <ul className="list-disc list-inside">
+              <ul className="list-disc list-outside">
                 <li>Highest calculator score record holder</li>
               </ul>
             </div>
 
-            <div>
+            <div className="space-y-2">
               <h3
                 id="skills"
                 className="text-base font-bold tracking-tighter md:text-xl lg:text-2xl"
@@ -286,20 +279,22 @@ export default function Home() {
                 Skills
               </h3>
 
-              {SKILLS.map((skill) => (
-                <div key={skill.heading} className="flex flex-col space-y-4 py-2">
-                  <h4 className="text-sm font-bold tracking-tighter md:text-lg lg:text-xl">
-                    {skill.heading}
-                  </h4>
-                  <div className="grid w-full grid-cols-2 items-stretch justify-center gap-2 md:grid-cols-3 lg:gap-4">
-                    {skill.skills.map((skill) => (
-                      <p key={skill} className="text-sm text-muted-foreground text-left">
-                        {skill}
-                      </p>
-                    ))}
+              <div className="flex flex-col space-y-4">
+                {SKILLS.map((skill) => (
+                  <div key={skill.heading}>
+                    <h4 className="text-sm font-bold tracking-tighter md:text-lg lg:text-xl">
+                      {skill.heading}
+                    </h4>
+                    <div className="grid w-full grid-cols-2 items-stretch justify-center md:grid-cols-3">
+                      {skill.skills.map((skill) => (
+                        <p key={skill} className="text-sm text-muted-foreground text-left">
+                          {skill}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
