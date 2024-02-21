@@ -4,6 +4,21 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import ProfilePicture from "@/assets/profile_picture.jpg";
 
+const NAV_LINKS = [
+  {
+    id: "about",
+    name: "About",
+  },
+  {
+    id: "ventures",
+    name: "Ventures",
+  },
+  {
+    id: "highlights",
+    name: "Highlights",
+  },
+];
+
 const VENTURES = [
   {
     id: "education-academy",
@@ -17,7 +32,7 @@ const VENTURES = [
   {
     id: "tlc-time-clock",
     name: "TLC Time Clock",
-    role: "Founder/CEO",
+    role: "Founder",
     timeframe: "(2020)",
     description:
       "Sold a web app to a local chain of small businesses to provide a time clock solution for their growing enterprise. My solution was the first to combine facial and thumb print recognition, GPS tracking, and payroll integration, all for a fraction of the cost of competitors.",
@@ -92,24 +107,15 @@ export default function Home() {
               </h1>
               <p className="text-muted-foreground">Builder. Tech Optimist. Lifestyle Enthusiast.</p>
               <div className="flex items-center gap-4 text-sm">
-                <Link
-                  className="text-muted-foreground hover:underline underline-offset-4"
-                  href="#about"
-                >
-                  About
-                </Link>
-                <Link
-                  className="text-muted-foreground hover:underline underline-offset-4"
-                  href="#ventures"
-                >
-                  Ventures
-                </Link>
-                <Link
-                  className="text-muted-foreground hover:underline underline-offset-4"
-                  href="#misc"
-                >
-                  Misc
-                </Link>
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.id}
+                    className="text-muted-foreground hover:underline underline-offset-4"
+                    href={`#${link.id}`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </div>
             <div className="flex items-center justify-center md:justify-end">
@@ -190,8 +196,11 @@ export default function Home() {
 
         <section className="container">
           <div className="flex flex-col space-y-6 max-w-5xl">
-            <h2 id="misc" className="text-xl font-bold tracking-tighter md:text-3xl lg:text-4xl">
-              Misc
+            <h2
+              id="highlights"
+              className="text-xl font-bold tracking-tighter md:text-3xl lg:text-4xl"
+            >
+              Highlights
             </h2>
 
             <div>
@@ -256,6 +265,27 @@ export default function Home() {
               </p>
               <ul className="list-disc list-outside">
                 <li>Highest calculator score record holder</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                id="projects"
+                className="text-base font-bold tracking-tighter md:text-xl lg:text-2xl"
+              >
+                Projects
+              </h3>
+              <ul className="list-disc list-outside">
+                <li>
+                  Alexa-controlled stovetop knob – a group of mechanical engineers and I built a
+                  voice-controlled stovetop knob with a fire detection and prevention system to
+                  decrease the number of home fires and increase kitchen accessibility for our
+                  senior capstone project.
+                </li>
+                <li>
+                  Woodworking CNC – needed a way to machine intricate designs into wood, so I built
+                  a CNC machine from scratch.
+                </li>
               </ul>
             </div>
 
