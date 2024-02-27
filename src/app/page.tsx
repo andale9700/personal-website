@@ -95,7 +95,7 @@ const SKILLS = [
 
 const URLS = {
   LINKEDIN: "https://www.linkedin.com/in/javier-garcia-io" as const,
-  EMAIL: "mailto:jgar2811@alumni.stanford.edu" as const,
+  EMAIL: "jgar2811@alumni.stanford.edu" as const,
 };
 
 export default function Home() {
@@ -348,7 +348,9 @@ export default function Home() {
           </Button>
           <Separator orientation="vertical" />
           <Button asChild variant="link" className="p-0">
-            <a href={URLS.EMAIL}>Email</a>
+            <a href={`mailto:${URLS.EMAIL}`} target="_blank">
+              Email ({URLS.EMAIL})
+            </a>
           </Button>
         </div>
       </footer>
