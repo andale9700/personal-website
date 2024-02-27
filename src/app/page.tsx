@@ -26,14 +26,14 @@ const VENTURES = [
     role: "Co-Founder/CEO",
     timeframe: "(2020-present)",
     description:
-      "Founded Education Academy in 2020 as a custom solution for UIL/TMSCA (drawing on my competitive math background) and evolved into a comprehensive AI-powered educational platform. Now partnered with 300+ Texas schools, our platform offers gamified learning, virtual competitions, and AI grading, all achieved without external fundraising.",
+      "Founded Education Academy as a custom solution for UIL/TMSCA (drawing on my competitive math background) and evolved into a comprehensive AI-powered educational platform. Now partnered with 300+ Texas schools, our platform offers gamified learning, virtual competitions, and AI grading, all achieved without external fundraising.",
     link: "https://www.educationacademy.xyz",
   },
   {
     id: "tlc-time-clock",
     name: "TLC Time Clock",
-    role: "Founder",
-    timeframe: "(2020)",
+    role: "Full Stack Developer",
+    timeframe: "(2019)",
     description:
       "Sold a web app to a local chain of small businesses to provide a time clock solution for their growing enterprise. My solution was the first to combine facial and thumb print recognition, GPS tracking, and payroll integration, all for a fraction of the cost of competitors.",
   },
@@ -42,7 +42,7 @@ const VENTURES = [
 const SKILLS = [
   {
     heading: "Programming Languages",
-    skills: ["TypeScript", "JavaScript", "Python"],
+    skills: ["TypeScript", "JavaScript", "Python", "SQL"],
   },
   {
     heading: "Technologies & Tools",
@@ -50,7 +50,6 @@ const SKILLS = [
       "Next.js",
       "React",
       "Tailwind",
-      "PostgreSQL",
       "Flask",
       "Node.js",
       "Express",
@@ -93,6 +92,11 @@ const SKILLS = [
     ],
   },
 ];
+
+const URLS = {
+  LINKEDIN: "https://www.linkedin.com/in/javier-garcia-io" as const,
+  EMAIL: "mailto:jgar2811@alumni.stanford.edu" as const,
+};
 
 export default function Home() {
   return (
@@ -140,12 +144,13 @@ export default function Home() {
               About
             </h2>
             <p>
-              Hi, I&apos;m Javier, but please call me Andrew! I&apos;m passionate about building
-              things that make people&apos;s lives better.
+              Hi, I&apos;m Javier, though I prefer Andrew! My passion lies in creating things that
+              make people&apos;s lives better.
             </p>
             <p>
-              Most recently, I&apos;ve focused on making education as fun and accessible for others
-              as it was for me– especially to students from underserved communities. Founding{" "}
+              In my latest venture, I&apos;ve dedicated myself to making education as fun and
+              accessible for others as it was for me– especially to students from underserved
+              communities. As the founder of{" "}
               <Button asChild variant="link" className="h-min p-0 text-base text-blue-600">
                 <Link href="#education-academy">Education Academy</Link>
               </Button>
@@ -155,7 +160,7 @@ export default function Home() {
             </p>
             <p>
               Beyond education, I&apos;m interested in plant-based bodybuilding, gaming, English
-              bulldogs, electronic music, and anime. Welcome to a window into my life!
+              bulldogs, electronic music, and anime. Consider this a small glimpse into my world!
             </p>
           </div>
         </section>
@@ -183,7 +188,7 @@ export default function Home() {
                   <p>{venture.description}</p>
                   {venture.link && (
                     <Button asChild variant="outline" className="w-min">
-                      <Link href={venture.link} className="">
+                      <Link href={venture.link} target="_blank">
                         Visit Website
                       </Link>
                     </Button>
@@ -213,8 +218,9 @@ export default function Home() {
 
               <ul className="list-disc list-outside">
                 <li>
-                  COGNISENSE AI, Lead Product Designer (2020) - led a team to the development of a
-                  wireless infrared camera system
+                  COGNISENSE AI, Lead Product Designer (2020) - led a team in designing and
+                  launching a wireless infrared camera system, addressing key market gaps in the
+                  manufacturing industry.
                 </li>
                 <li>
                   Northrop Grumman, Systems Engineering Intern (2018) - wrote Javascript scripts to
@@ -233,9 +239,10 @@ export default function Home() {
               >
                 Education
               </h3>
+              <p>Stanford University (2016-2020)</p>
               <p>
-                B.S. in Mechanical Engineering (Dynamic Systems &amp; Controls) from Stanford
-                University (2016-2020): 3.73/4.00 GPA
+                B.S. in Mechanical Engineering (Dynamic Systems &amp; Controls) with a Minor in
+                Computer Science: 3.73/4.00 GPA
               </p>
               <ul className="list-disc list-outside">
                 <li>Freshman RA - Rinconada</li>
@@ -253,13 +260,23 @@ export default function Home() {
               </h3>
 
               <p>
-                TMSCA Top Dog Award: Best overall math and science student in Texas (
+                TMSCA Top Gun Award: Best overall math and science student in Texas (
                 <Button asChild variant="link" className="w-min px-0 text-base text-blue-600">
-                  <Link href="https://www.tmsca.org/images/2015_hs_state/6a_top_gun.pdf">2015</Link>
+                  <a
+                    href="https://www.tmsca.org/images/2015_hs_state/6a_top_gun.pdf"
+                    target="_blank"
+                  >
+                    2015
+                  </a>
                 </Button>{" "}
                 &amp;{" "}
                 <Button asChild variant="link" className="w-mi px-0 text-base text-blue-600">
-                  <Link href="https://www.tmsca.org/images/2016_hs_state/6a_top_gun.pdf">2016</Link>
+                  <a
+                    href="https://www.tmsca.org/images/2016_hs_state/6a_top_gun.pdf"
+                    target="_blank"
+                  >
+                    2016
+                  </a>
                 </Button>
                 )
               </p>
@@ -285,6 +302,10 @@ export default function Home() {
                 <li>
                   Woodworking CNC – needed a way to machine intricate designs into wood, so I built
                   a CNC machine from scratch.
+                </li>
+                <li>
+                  Silversmithing - I enjoy casting intricate jewelry, blending wood and metal, for
+                  friends and family after taking a course at Stanford.
                 </li>
               </ul>
             </div>
@@ -321,15 +342,13 @@ export default function Home() {
         <Separator className="my-4" />
         <div className="container flex h-5 items-center space-x-4">
           <Button asChild variant="link" className="p-0">
-            <Link href="https://www.linkedin.com/in/andrewgarcia2811" className="">
+            <a href={URLS.LINKEDIN} target="_blank">
               LinkedIn
-            </Link>
+            </a>
           </Button>
           <Separator orientation="vertical" />
           <Button asChild variant="link" className="p-0">
-            <Link href="mailto:andrewgarcia2811@gmail.com" className="">
-              Email
-            </Link>
+            <a href={URLS.EMAIL}>Email</a>
           </Button>
         </div>
       </footer>
