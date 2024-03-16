@@ -155,7 +155,7 @@ export default function Home() {
                 <Link href="#education-academy">Education Academy</Link>
               </Button>
               , I&apos;ve pioneered hundreds of solutions that democratize learning for thousands
-              across Texas including parterning with the largest math and science organizations in
+              across Texas, including partnering with the largest math and science organizations in
               Texas.
             </p>
             <p>
