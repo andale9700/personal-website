@@ -42,7 +42,7 @@ const VENTURES = [
 const SKILLS = [
   {
     heading: "Programming Languages",
-    skills: ["TypeScript", "JavaScript", "Python", "SQL"],
+    skills: ["TypeScript", "JavaScript", "Ruby on Rails", "Python", "SQL",],
   },
   {
     heading: "Technologies & Tools",
@@ -148,19 +148,24 @@ export default function Home() {
               make people&apos;s lives better.
             </p>
             <p>
-              In my latest venture, I&apos;ve dedicated myself to making education as fun and
-              accessible for others as it was for me– especially to students from underserved
-              communities. As the founder of{" "}
+              Currently, I work as a Software Engineer at{" "}
+              <Button asChild variant="link" className="h-min p-0 text-base text-blue-600">
+                <Link href="#experience">Solo</Link>
+              </Button>
+              , where I develop solutions that make legal help accessible to anyone facing debt collection lawsuits.
+            </p>
+            <p>
+              I'm also the founder of{" "}
               <Button asChild variant="link" className="h-min p-0 text-base text-blue-600">
                 <Link href="#education-academy">Education Academy</Link>
               </Button>
-              , I&apos;ve pioneered hundreds of solutions that democratize learning for thousands
+              , where I've pioneered hundreds of solutions that democratize learning for thousands
               across Texas, including partnering with the largest math and science organizations in
               Texas.
             </p>
             <p>
-              Beyond education, I&apos;m interested in plant-based bodybuilding, gaming, English
-              bulldogs, electronic music, and anime. Consider this a small glimpse into my world!
+              Beyond my professional work, I&apos;m interested in plant-based bodybuilding, gaming, English
+              bulldogs, electronic music, anime, and constant learning. Thanks for visiting!
             </p>
           </div>
         </section>
@@ -218,6 +223,15 @@ export default function Home() {
 
               <ul className="list-disc list-outside">
                 <li>
+                  <Button asChild variant="link" className="h-min p-0 text-base text-blue-600">
+                    <a href="https://www.solosuit.com" target="_blank">
+                      Solo (formerly SoloSuit)
+                    </a>
+                  </Button>
+                  , Software Engineer (2024-present) - developing software solutions that 
+                  help people respond to debt collection lawsuits, making legal help accessible to everyone.
+                </li>
+                <li>
                   COGNISENSE AI, Lead Product Designer (2020) - led a team in designing and
                   launching a wireless infrared camera system, addressing key market gaps in the
                   manufacturing industry.
@@ -239,9 +253,12 @@ export default function Home() {
               >
                 Education
               </h3>
-              <p>Stanford University (2016-2020)</p>
+              <p className="font-bold">Stanford University (2016-present)</p>
               <p>
-                B.S. in Mechanical Engineering (Dynamic Systems &amp; Controls) with a Minor in
+                M.S. in Computer Science (2024-present) (AI Track): 4.03/4.00 GPA
+              </p>
+              <p>
+                B.S. in Mechanical Engineering (2016-2020) (Dynamic Systems &amp; Controls) with a Minor in
                 Computer Science: 3.73/4.00 GPA
               </p>
               <ul className="list-disc list-outside">
@@ -352,6 +369,8 @@ export default function Home() {
               Email ({URLS.EMAIL})
             </a>
           </Button>
+          <Separator orientation="vertical" />
+          <p className="text-xs text-muted-foreground">Last updated: March 15, 2025</p>
         </div>
       </footer>
     </main>
